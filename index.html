@@ -3,12 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script>document.documentElement.classList.add('js-motion')</script>
 <title>Nidha's — Handcrafted Indian Ethnic Wear</title>
 <meta name="description" content="Nidha's — premium salwar suits, Chikankari, festive and bridal wear, handcrafted in India. Browse the edit, save your favourites, and enquire on WhatsApp.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="motion.css">
 </head>
-<body>
+<body class="has-hero">
 
 <a href="#main" class="skip-link">Skip to content</a>
 
@@ -76,7 +78,13 @@
         </div>
       </div>
       <div class="hero-visual">
-        <div class="placeholder-media tall" style="--ph-h:28" data-mono="N"><span class="placeholder-tag">Sample image — hero</span></div>
+        <div class="video-frame hero-video" data-video="hero.mp4">
+          <div class="placeholder-media tall" style="--ph-h:28" data-mono="N"><span class="placeholder-tag">Sample image — hero</span></div>
+          <div class="video-placeholder-badge">
+            <span class="play-ico"><svg viewBox="0 0 24 24"><path d="M8 5l12 7-12 7z"/></svg></span>
+            <span>Video Coming Soon</span>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -93,11 +101,23 @@
     </div>
     <div class="collections-grid">
       <a href="shop.html?category=Bridal" class="collection-card reveal">
-        <div class="placeholder-media tall" style="--ph-h:225" data-mono="N"><span class="placeholder-tag">Sample image</span></div>
+        <div class="video-frame" data-video="bridal.mp4">
+          <div class="placeholder-media tall" style="--ph-h:225" data-mono="N"><span class="placeholder-tag">Sample image</span></div>
+          <div class="video-placeholder-badge">
+            <span class="play-ico"><svg viewBox="0 0 24 24"><path d="M8 5l12 7-12 7z"/></svg></span>
+            <span>Video Coming Soon</span>
+          </div>
+        </div>
         <div class="collection-card-overlay"><h3>The Bridal Edit</h3><span>Shop Bridal</span></div>
       </a>
       <a href="shop.html?category=Chikankari" class="collection-card reveal">
-        <div class="placeholder-media tall" style="--ph-h:60" data-mono="N"><span class="placeholder-tag">Sample image</span></div>
+        <div class="video-frame" data-video="collection.mp4">
+          <div class="placeholder-media tall" style="--ph-h:60" data-mono="N"><span class="placeholder-tag">Sample image</span></div>
+          <div class="video-placeholder-badge">
+            <span class="play-ico"><svg viewBox="0 0 24 24"><path d="M8 5l12 7-12 7z"/></svg></span>
+            <span>Video Coming Soon</span>
+          </div>
+        </div>
         <div class="collection-card-overlay"><h3>Chikankari Story</h3><span>Shop Chikankari</span></div>
       </a>
       <a href="shop.html?category=Festive%20Wear" class="collection-card reveal">
@@ -141,7 +161,13 @@
   <section class="section section--sand">
     <div class="container story">
       <div class="story-visual reveal">
-        <div class="placeholder-media wide" style="--ph-h:36" data-mono="N"><span class="placeholder-tag">Sample image — atelier</span></div>
+        <div class="video-frame" data-video="craftsmanship.mp4">
+          <div class="placeholder-media wide" style="--ph-h:36" data-mono="N"><span class="placeholder-tag">Sample image — atelier</span></div>
+          <div class="video-placeholder-badge">
+            <span class="play-ico"><svg viewBox="0 0 24 24"><path d="M8 5l12 7-12 7z"/></svg></span>
+            <span>Video Coming Soon</span>
+          </div>
+        </div>
       </div>
       <div class="story-copy reveal">
         <span class="eyebrow">Our Story</span>
@@ -320,5 +346,6 @@
 
 <script src="main.js"></script>
 <script src="home.js"></script>
+<script src="motion.js"></script>
 </body>
 </html>

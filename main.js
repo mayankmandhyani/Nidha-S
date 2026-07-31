@@ -228,7 +228,11 @@ function initTestimonials() {
     i = n;
   };
   dots.forEach((d, idx) => d.addEventListener("click", () => show(idx)));
-  setInterval(() => show((i + 1) % slides.length), 5500);
+  let timer = setInterval(() => show((i + 1) % slides.length), 5500);
+  wrap.addEventListener("mouseenter", () => clearInterval(timer));
+  wrap.addEventListener("mouseleave", () => {
+    timer = setInterval(() => show((i + 1) % slides.length), 5500);
+  });
 }
 
 /* ---------------- Reveal on scroll ---------------- */

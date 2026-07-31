@@ -1,0 +1,322 @@
+/* ==================================================================
+   NIDHA'S — MOTION LAYER
+   Purely additive on top of style.css. No colors, fonts, spacing or
+   layout values are redefined here — only opacity/transform-based
+   motion, plus the video-frame + cursor components.
+
+   Progressive enhancement contract:
+   - Everything in this file assumes the `.js-motion` class on <html>,
+     set by a tiny inline script in <head> BEFORE first paint. If JS is
+     disabled/blocked, that class never appears, none of the "start
+     hidden" rules below apply, and the page renders exactly as it did
+     before this file existed — fully visible, nothing broken.
+   - The global `prefers-reduced-motion` block already in style.css
+     forces every transition/animation duration to ~0 site-wide, so
+     everything added here inherits that safety net automatically.
+   ================================================================== */
+
+/* ============================================================
+   View Transitions (native, zero-JS, progressively enhanced —
+   unsupported browsers simply keep instant navigation)
+   ============================================================ */
+@view-transition{
+  navigation:auto;
+}
+@media (prefers-reduced-motion: no-preference){
+  ::view-transition-old(root),::view-transition-new(root){
+    animation-duration:.45s;
+    animation-timing-function:cubic-bezier(.4,0,.2,1);
+  }
+  ::view-transition-old(root){
+    animation-name:nidhas-page-out;
+  }
+  ::view-transition-new(root){
+    animation-name:nidhas-page-in;
+  }
+}
+@keyframes nidhas-page-out{
+  to{opacity:0;transform:translateY(-10px);}
+}
+@keyframes nidhas-page-in{
+  from{opacity:0;transform:translateY(10px);}
+}
+
+/* ============================================================
+   Hero entrance sequence — completes in ~1.5s
+   ============================================================ */
+.js-motion .hero-copy .eyebrow{
+  opacity:0;transform:translateY(16px);
+  animation:nidhas-rise .6s cubic-bezier(.16,.8,.3,1) .05s forwards;
+}
+.js-motion .hero-copy .word{
+  display:inline-block;
+  opacity:0;
+  transform:translateY(22px);
+  animation:nidhas-rise .7s cubic-bezier(.16,.8,.3,1) forwards;
+  /* per-word animation-delay is set inline by motion.js */
+}
+.js-motion .hero-copy h1 br{ display:block; content:""; }
+.js-motion .hero-copy .hero-fold{
+  opacity:0;transform:translateY(16px);
+  animation:nidhas-rise .5s cubic-bezier(.16,.8,.3,1) .68s forwards;
+}
+.js-motion .hero-copy p{
+  opacity:0;transform:translateY(16px);
+  animation:nidhas-rise .6s cubic-bezier(.16,.8,.3,1) .78s forwards;
+}
+.js-motion .hero-actions{
+  opacity:0;transform:translateY(16px);
+  animation:nidhas-rise .6s cubic-bezier(.16,.8,.3,1) .95s forwards;
+}
+@keyframes nidhas-rise{
+  to{opacity:1;transform:translateY(0);}
+}
+
+/* ============================================================
+   Reveal — retuned to spec (20–30px, ~0.6s) + grid stagger
+   ============================================================ */
+.reveal{
+  transition:opacity .6s cubic-bezier(.16,.8,.3,1),
+             transform .6s cubic-bezier(.16,.8,.3,1);
+  transform:translateY(26px);
+}
+.reveal.is-visible{transform:translateY(0);}
+
+.product-grid > .reveal:nth-child(4n+1){transition-delay:0s;}
+.product-grid > .reveal:nth-child(4n+2){transition-delay:.1s;}
+.product-grid > .reveal:nth-child(4n+3){transition-delay:.2s;}
+.product-grid > .reveal:nth-child(4n+4){transition-delay:.3s;}
+
+.collections-grid > .reveal:nth-child(1){transition-delay:0s;}
+.collections-grid > .reveal:nth-child(2){transition-delay:.1s;}
+.collections-grid > .reveal:nth-child(3){transition-delay:.2s;}
+
+.feature-grid > .reveal:nth-child(4n+1){transition-delay:0s;}
+.feature-grid > .reveal:nth-child(4n+2){transition-delay:.1s;}
+.feature-grid > .reveal:nth-child(4n+3){transition-delay:.2s;}
+.feature-grid > .reveal:nth-child(4n+4){transition-delay:.3s;}
+
+.insta-grid > .reveal:nth-child(6n+1){transition-delay:0s;}
+.insta-grid > .reveal:nth-child(6n+2){transition-delay:.08s;}
+.insta-grid > .reveal:nth-child(6n+3){transition-delay:.16s;}
+.insta-grid > .reveal:nth-child(6n+4){transition-delay:.24s;}
+.insta-grid > .reveal:nth-child(6n+5){transition-delay:.32s;}
+.insta-grid > .reveal:nth-child(6n+6){transition-delay:.4s;}
+
+/* ============================================================
+   Navigation — transparent-over-hero, solid after scroll
+   (scoped to body.has-hero; every other page keeps its solid
+   header exactly as before, since it has no hero to sit over)
+   ============================================================ */
+body.has-hero .site-header{
+  transition:background-color .5s ease, border-color .5s ease, backdrop-filter .5s ease, box-shadow .5s ease;
+}
+body.has-hero .site-header:not(.is-scrolled){
+  background:transparent;
+  border-bottom-color:transparent;
+  backdrop-filter:none;
+}
+body.has-hero .site-header.is-scrolled{
+  box-shadow:0 1px 0 rgba(34,30,25,.02);
+}
+
+/* ============================================================
+   Buttons — lift + soft shadow + press
+   ============================================================ */
+.btn{transition:background var(--dur) var(--ease),color var(--dur) var(--ease),border-color var(--dur) var(--ease),transform .3s var(--ease),box-shadow .3s var(--ease);}
+.btn:hover{transform:translateY(-2px);box-shadow:0 10px 24px -14px rgba(34,30,25,.45);}
+.btn:active{transform:translateY(0) scale(.98);box-shadow:0 4px 10px -6px rgba(34,30,25,.35);}
+.btn-primary:hover{box-shadow:0 12px 26px -14px rgba(34,30,25,.55);}
+.icon-btn{transition:background var(--dur) var(--ease),transform .3s var(--ease);}
+.icon-btn:hover{transform:translateY(-1px);}
+
+/* ============================================================
+   Product cards — richer hover
+   ============================================================ */
+.product-info h3 a{
+  background-image:linear-gradient(currentColor,currentColor);
+  background-position:0 100%;
+  background-repeat:no-repeat;
+  background-size:0% 1px;
+  transition:background-size .4s cubic-bezier(.4,0,.2,1), color .3s ease;
+  padding-bottom:1px;
+}
+.product-card:hover .product-info h3 a{
+  background-size:100% 1px;
+  color:var(--gold-text);
+  text-decoration:none;
+}
+.product-card{transition:filter .4s ease;}
+.product-media{transition:box-shadow .4s ease;}
+.product-card:hover .product-media{box-shadow:0 18px 40px -22px rgba(34,30,25,.35);}
+.product-media .placeholder-media{transition:transform 1.2s cubic-bezier(.16,.8,.3,1),opacity .5s ease;}
+.product-card:hover .product-media .placeholder-media:not(.alt){transform:scale(1.05);}
+
+/* ============================================================
+   Collection cards — zoom + darken + title lift
+   ============================================================ */
+.collection-card-overlay h3,
+.collection-card-overlay span{
+  transition:transform .5s cubic-bezier(.16,.8,.3,1);
+}
+.collection-card:hover .collection-card-overlay h3{transform:translateY(-4px);}
+.collection-card:hover .collection-card-overlay span{transform:translateY(-4px);}
+.collection-card-overlay{transition:background .5s ease;}
+.collection-card:hover .collection-card-overlay{
+  background:linear-gradient(0deg, rgba(20,17,13,.82) 0%, rgba(20,17,13,.08) 55%);
+}
+
+/* ============================================================
+   Instagram gallery — gentle zoom on hover
+   ============================================================ */
+.insta-item .placeholder-media{transition:transform 1s cubic-bezier(.16,.8,.3,1);}
+.insta-item:hover .placeholder-media{transform:scale(1.06);}
+
+/* ============================================================
+   Footer — social icon lift, newsletter focus
+   ============================================================ */
+.footer-socials a{transition:border-color var(--dur),background var(--dur),transform .3s var(--ease);}
+.footer-socials a:hover{transform:translateY(-3px);}
+.newsletter-form{transition:border-color .4s ease;}
+.newsletter-form:focus-within{border-bottom-color:var(--ivory);}
+.newsletter-form input{transition:letter-spacing .3s ease;}
+
+/* ============================================================
+   Forms — elegant focus + loading + success
+   ============================================================ */
+.field input,.field textarea,.field select{
+  transition:border-color .35s ease, box-shadow .35s ease;
+}
+.field input:focus,.field textarea:focus,.field select:focus{
+  box-shadow:0 0 0 3px rgba(167,130,46,.14);
+}
+.newsletter-form button{position:relative;transition:opacity .3s ease;}
+.newsletter-form.is-submitting button{color:transparent;pointer-events:none;}
+.newsletter-form.is-submitting button::after{
+  content:"";position:absolute;inset:0;margin:auto;width:14px;height:14px;
+  border:2px solid rgba(251,248,242,.35);border-top-color:var(--ivory);border-radius:50%;
+  animation:nidhas-spin .7s linear infinite;
+}
+@keyframes nidhas-spin{to{transform:rotate(360deg);}}
+.form-msg.is-in{animation:nidhas-msg-in .5s cubic-bezier(.16,.8,.3,1) forwards;}
+@keyframes nidhas-msg-in{
+  from{opacity:0;transform:translateY(6px);}
+  to{opacity:1;transform:translateY(0);}
+}
+
+/* ============================================================
+   Skeleton loading (brand-toned shimmer — ready for the
+   Supabase data-fetch phase; not wired into a live fetch yet
+   since today's product grid renders synchronously from a
+   local array, so there is no genuine loading gap to fill)
+   ============================================================ */
+.skeleton-card .placeholder-media,
+.skeleton-line{
+  background:linear-gradient(100deg, var(--sand) 30%, var(--sand-deep) 50%, var(--sand) 70%);
+  background-size:200% 100%;
+  animation:nidhas-shimmer 1.6s ease-in-out infinite;
+}
+.skeleton-line{height:.85em;border-radius:2px;margin-top:8px;width:70%;}
+@keyframes nidhas-shimmer{
+  0%{background-position:200% 0;}
+  100%{background-position:-200% 0;}
+}
+
+/* ============================================================
+   Video frame component
+   ============================================================ */
+.video-frame{position:relative;overflow:hidden;}
+.hero-visual .video-frame{height:100%;}
+.video-frame video{
+  position:absolute;inset:0;width:100%;height:100%;object-fit:cover;
+  opacity:0;transition:opacity 1s ease;
+}
+.video-frame.is-loaded video{opacity:1;}
+.video-frame.is-loaded .placeholder-media,
+.video-frame.is-loaded .video-placeholder-badge{opacity:0;}
+.video-frame .placeholder-media,
+.video-frame .video-placeholder-badge{transition:opacity .6s ease;}
+
+.video-placeholder-badge{
+  position:absolute;inset:0;z-index:1;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;
+  color:var(--ivory);background:transparent;cursor:default;
+}
+.video-placeholder-badge .play-ico{
+  width:52px;height:52px;border-radius:50%;
+  background:rgba(20,17,13,.55);
+  border:1px solid rgba(251,248,242,.75);
+  display:flex;align-items:center;justify-content:center;
+  transition:transform .4s var(--ease), background .4s var(--ease);
+}
+.video-placeholder-badge .play-ico svg{width:16px;height:16px;fill:var(--ivory);margin-left:2px;}
+.video-frame:hover .video-placeholder-badge .play-ico{
+  transform:scale(1.08);
+  background:rgba(20,17,13,.72);
+}
+.video-placeholder-badge span:last-child{
+  font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;font-weight:600;
+  background:rgba(20,17,13,.78);
+  padding:6px 12px;
+  border-radius:2px;
+}
+
+/* Ken Burns — hero video/placeholder only */
+@media (prefers-reduced-motion: no-preference){
+  .video-frame.hero-video .placeholder-media,
+  .video-frame.hero-video video{
+    animation:nidhas-kenburns 24s ease-in-out infinite alternate;
+  }
+}
+@keyframes nidhas-kenburns{
+  from{transform:scale(1);}
+  to{transform:scale(1.08);}
+}
+
+/* ============================================================
+   Custom cursor (desktop, fine pointer only — applied via JS
+   feature-detection; native cursor is the default and is only
+   ever hidden once this component has actually initialised)
+   ============================================================ */
+.lux-cursor-active{cursor:none;}
+.lux-cursor-active a,
+.lux-cursor-active button,
+.lux-cursor-active summary,
+.lux-cursor-active input,
+.lux-cursor-active select,
+.lux-cursor-active textarea{cursor:none;}
+
+.lux-cursor{
+  position:fixed;top:0;left:0;z-index:9999;pointer-events:none;
+  width:9px;height:9px;border-radius:50%;background:var(--gold);
+  transition:width .3s cubic-bezier(.16,.8,.3,1), height .3s cubic-bezier(.16,.8,.3,1),
+             background .3s ease, opacity .3s ease;
+  opacity:0;
+  will-change:transform;
+}
+.lux-cursor.is-visible{opacity:1;}
+.lux-cursor.is-hover{
+  width:44px;height:44px;background:transparent;border:1px solid var(--gold);
+}
+
+/* ============================================================
+   Reduced motion — extra belt-and-braces for JS-driven bits
+   that aren't plain CSS transitions/animations
+   ============================================================ */
+@media (prefers-reduced-motion: reduce){
+  .lux-cursor{display:none;}
+  ::view-transition-group(*),
+  ::view-transition-old(*),
+  ::view-transition-new(*){
+    animation:none !important;
+  }
+  .js-motion .hero-copy .word,
+  .js-motion .hero-copy .eyebrow,
+  .js-motion .hero-copy p,
+  .js-motion .hero-copy .hero-fold,
+  .js-motion .hero-actions{
+    opacity:1 !important;
+    transform:none !important;
+    animation:none !important;
+  }
+}
