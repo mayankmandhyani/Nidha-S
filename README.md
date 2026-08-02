@@ -1,43 +1,41 @@
 # Nidha's — Demo Site
 
-## What's new in this pass
-- Real logo: logo.png (transparent navy wordmark, cut from your logo file)
-  now used in the header, mobile nav, and footer — replacing the CSS text
-  approximation. logo-full-res.png is a larger version for anything that
-  needs more than web resolution (print, signage, etc).
-- favicon.png / apple-touch-icon.png — cropped from your original logo
-  (kept the orange field here since a tiny navy-on-transparent wordmark
-  would be unreadable at favicon size).
-- Orange is now a deliberate, high-visibility brand color, not just a
-  thin accent: the announcement bar and every primary button use it,
-  with primary buttons flipping to navy on hover. Kept it to those two
-  spots on purpose — spreading it across every element would fight the
-  "professional, not just orange background" note.
+## IMPORTANT — cache-busting added this pass
+Every CSS/JS reference in the HTML now ends in "?v=2" (e.g. style.css?v=2).
+This forces browsers and GitHub Pages' CDN to fetch the new file instead
+of quietly reusing an old cached copy — which is almost certainly why the
+orange changes from the last update weren't showing up: the HTML had
+updated (new logo, new EN/HI toggle) but style.css was still being served
+from cache.
 
-## Business model (from before, unchanged)
-- Unstitched fabric only — not ready-made kurtis.
-- Every design sold as the complete set of its 4 colourways together.
-- No sizes anywhere (nothing is pre-stitched).
+Going forward: every time you push a real CSS/JS change, bump the number
+(?v=2 -> ?v=3, etc.) in all three HTML files, or the same caching problem
+will happen again. Find-and-replace "v=2" with "v=3" across all three
+files takes 10 seconds and avoids this.
 
-## Bilingual (EN / Hindi)
-Toggle in the header. Product/category/fabric names never translate.
-Have a native speaker proof i18n.js before this goes live.
+## Also fixed: header layout bug on mobile
+The logo and the EN/हिं toggle were crowding into each other on phone-
+width screens (visible in your screenshot) — a real CSS layout bug, not
+a cache issue. Rebuilt the mobile header row with flexbox instead of a
+3-column grid that had an empty, unused third column once the desktop
+nav was hidden. Also capped the logo image's max-width defensively so
+it can never blow out past a sane size regardless of screen width.
 
-## Files
-- index.html / shop.html / product.html
-- style.css — design system + navy/orange brand tokens
-- motion.css / motion.js — animation layer
-- i18n.js — English/Hindi dictionary + language toggle
-- main.js / home.js / shop.js / product.js — data + page logic
-- logo.png, logo-full-res.png, favicon.png, apple-touch-icon.png
-- videos/ — drop real .mp4 files here
+## Orange — confirmed present in the code
+--gold-btn: #cf7539, used on .announce (top bar) and .btn-primary
+(main CTA buttons). This was already correct in the file you have —
+the screenshot was showing a stale cached version, not missing code.
+
+## Everything else from before, unchanged
+Unstitched fabric / set-of-4 model, EN-Hindi toggle, real logo, GA4
+enquiry click tracking. See earlier notes for details.
 
 ## Run locally
 Open index.html in a browser. No server, no npm install.
 
 ## Before this goes live
-- Replace WHATSAPP_NUMBER in main.js with the real number.
-- Add real product photography and real .mp4 files.
-- Replace the demo PRODUCTS array with real catalogue data (exactly 4
-  colors per design).
+- Replace WHATSAPP_NUMBER in main.js.
+- Replace GA_MEASUREMENT_ID in every HTML <head>.
+- Real product photography + real .mp4s in /videos.
+- Replace the demo PRODUCTS array with real catalogue data.
 - Native-speaker review of the Hindi in i18n.js.

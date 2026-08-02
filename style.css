@@ -183,7 +183,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,
 .logo span{color:var(--gold);}
 
 .logo-mark{display:flex;align-items:center;justify-content:center;}
-.logo-img{height:26px;width:auto;display:block;}
+.logo-img{height:26px;width:auto;max-width:160px;display:block;}
 .footer-brand .logo-mark{justify-content:flex-start;}
 .footer-brand .logo-img{height:30px;}
 
@@ -672,7 +672,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,
 }
 
 @media (max-width:640px){
-  .header-row{grid-template-columns:auto 1fr auto;height:72px;}
+  .header-row{display:flex;align-items:center;justify-content:space-between;height:72px;}
   .logo{font-size:1.35rem;text-align:left;}
   .logo-mark{justify-content:flex-start;}
   .logo-img{height:20px;}
