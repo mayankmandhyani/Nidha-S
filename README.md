@@ -1,40 +1,22 @@
-# Nidha's — Demo Site
+# /videos
 
-Static demo (no build step). Home, Collections and Product Detail pages.
+Drop real .mp4 files in here with these exact names — the site already
+looks for them and will switch from the "Video Coming Soon" placeholder
+to the real video automatically, no code changes needed:
 
-## Business model reflected in this build
-- Unstitched fabric only — not ready-made kurtis.
-- Every design sold as the complete set of its 4 colourways together —
-  no single-colour purchase. Enforced in the product data model itself
-  (colors is always exactly 4), not just mentioned in copy.
-- No size selection anywhere (nothing is pre-stitched).
+  hero.mp4            → Homepage hero (gets a slow Ken Burns zoom)
+  bridal.mp4          → "The Bridal Edit" collection card
+  collection.mp4      → "Chikankari Story" collection card
+  craftsmanship.mp4   → "Our Story" section
 
-## Bilingual (EN / Hindi)
-- Toggle in the header (EN / हिं). Persists across pages via localStorage.
-- Product names, category names and fabric names stay in English always,
-  by design — everything else (nav, hero, footer, forms, badges, product
-  detail chrome) switches.
-- Dictionary lives in i18n.js. Add a key there (both `en` and `hi`
-  blocks) and either add `data-i18n="key"` to an element, or call
-  `t('key')` from JS for dynamically generated text.
+  about.mp4 is not wired in yet — there's no About page in this build
+  yet. Same drop-in mechanism will apply once that page exists.
 
-## Files
-- index.html / shop.html / product.html — the three pages
-- style.css — design system + the new navy/orange brand tokens
-- motion.css / motion.js — animation layer
-- i18n.js — English/Hindi dictionary + language toggle
-- main.js — product data, wishlist, drawer, nav, testimonials
-- home.js / shop.js / product.js — page-specific rendering
-- videos/ — drop real .mp4 files here (see videos/README.md)
+Keep each file reasonably compressed (H.264 .mp4, ideally under ~6-8MB)
+since they autoplay muted/looped — a heavy file will make the section
+feel slow to fade in on mobile connections.
 
-## Run locally
-Open index.html in a browser. No server, no npm install.
-
-## Before this goes live
-- Replace WHATSAPP_NUMBER in main.js with the real WhatsApp Business number.
-- Add real product photography (replace the CSS placeholder panels).
-- Add real .mp4 files to /videos using the exact filenames referenced.
-- Replace the demo PRODUCTS array in main.js with real catalogue data —
-  keep exactly 4 colors per design to match the set-only model.
-- Have a Hindi speaker proofread i18n.js — the translations are a solid
-  first pass but weren't reviewed by a native speaker.
+Note: this is a flat static site (no Next.js/React build step), so
+there's no /public folder — files are served straight from wherever
+they sit in the repo. This folder just needs to stay named "videos"
+and sit next to index.html, exactly as it does now.
