@@ -12,6 +12,7 @@
   --ink-soft:#1c2f52;     /* lighter navy, for hover states */
   --bark:#565e70;         /* muted navy-grey for secondary text */
   --gold:#c86b2a;         /* rust orange, sampled from the Nidha's logo background */
+  --gold-btn:#cf7539;     /* same orange, nudged for clean 4.5:1+ contrast under navy text on solid fills */
   --gold-soft:#e2935c;    /* lighter orange tint, for text on dark navy sections */
   --gold-text:#8f4b1d;    /* darker orange — meets 4.5:1 for small text on ivory/sand */
   --line:#ded0b4;
@@ -129,8 +130,8 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,
   transition:background var(--dur) var(--ease),color var(--dur) var(--ease),border-color var(--dur) var(--ease),transform var(--dur) var(--ease);
   white-space:nowrap;
 }
-.btn-primary{background:var(--ink);color:var(--ivory);}
-.btn-primary:hover{background:var(--ink-soft);transform:translateY(-1px);}
+.btn-primary{background:var(--gold-btn);color:var(--ink);}
+.btn-primary:hover{background:var(--ink);color:var(--ivory);transform:translateY(-1px);}
 .btn-outline{background:transparent;color:var(--ink);}
 .btn-outline:hover{background:var(--ink);color:var(--ivory);}
 .btn-ghost{border-color:var(--ivory);color:var(--ivory);}
@@ -160,9 +161,9 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,
    Announcement bar + Header
    ============================================================ */
 .announce{
-  background:var(--ink);color:var(--sand);
+  background:var(--gold-btn);color:var(--ink);
   text-align:center;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;
-  padding:9px 16px;font-weight:500;
+  padding:9px 16px;font-weight:600;
 }
 
 .site-header{
@@ -180,6 +181,11 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,
   font-size:1.7rem;letter-spacing:.02em;text-align:center;
 }
 .logo span{color:var(--gold);}
+
+.logo-mark{display:flex;align-items:center;justify-content:center;}
+.logo-img{height:26px;width:auto;display:block;}
+.footer-brand .logo-mark{justify-content:flex-start;}
+.footer-brand .logo-img{height:30px;}
 
 .nav-main{display:flex;gap:34px;}
 .nav-main a{
@@ -668,6 +674,8 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,
 @media (max-width:640px){
   .header-row{grid-template-columns:auto 1fr auto;height:72px;}
   .logo{font-size:1.35rem;text-align:left;}
+  .logo-mark{justify-content:flex-start;}
+  .logo-img{height:20px;}
   .footer-grid{grid-template-columns:1fr;padding-block:48px;gap:34px;}
   .product-grid{grid-template-columns:repeat(2,1fr);gap:16px 12px;}
   .feature-grid{grid-template-columns:1fr;}
