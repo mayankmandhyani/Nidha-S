@@ -1,4 +1,5 @@
-/* Shop / collection listing page logic — filters over the shared PRODUCTS array */
+/* Shop / collection listing page logic — filters over the shared PRODUCTS array.
+   No size filter: Nidha's sells unstitched fabric, so sizes don't apply. */
 (function () {
   const grid = document.querySelector("[data-product-grid]");
   const countEl = document.querySelector("[data-shop-count]");
@@ -9,12 +10,7 @@
   if (!grid) return;
 
   const params = new URLSearchParams(location.search);
-  const state = {
-    category: params.get("category") ? [params.get("category")] : [],
-    fabric: [],
-    size: [],
-    sort: "newest",
-  };
+  const presetCategory = params.get("category");
 
   function getChecked(name) {
     return [...form.querySelectorAll(`input[name="${name}"]:checked`)].map(i => i.value);
@@ -25,11 +21,9 @@
 
     const cats = getChecked("category");
     const fabrics = getChecked("fabric");
-    const sizes = getChecked("size");
 
     if (cats.length) list = list.filter(p => cats.includes(p.category));
     if (fabrics.length) list = list.filter(p => fabrics.some(f => p.fabric.toLowerCase().includes(f.toLowerCase())));
-    if (sizes.length) list = list.filter(p => p.sizes.some(s => sizes.includes(s)));
 
     switch (sortEl?.value) {
       case "price-asc": list.sort((a, b) => a.price - b.price); break;
@@ -38,7 +32,7 @@
       default: break; // "newest" keeps demo order
     }
 
-    if (countEl) countEl.textContent = `${list.length} piece${list.length !== 1 ? "s" : ""}`;
+    if (countEl) countEl.textContent = tt("shop.countPieces", { count: list.length });
     renderGrid(grid, list);
   }
 
@@ -48,14 +42,15 @@
     form.querySelectorAll("input[type=checkbox]").forEach(i => (i.checked = false));
     apply();
   });
+  document.addEventListener("lang:change", apply); // re-render so the count string & grid badges pick up the new language
 
   // Pre-check category from URL (e.g. index.html links "Shop Bridal")
-  if (state.category.length) {
-    const box = form?.querySelector(`input[name="category"][value="${state.category[0]}"]`);
+  if (presetCategory) {
+    const box = form?.querySelector(`input[name="category"][value="${presetCategory}"]`);
     if (box) box.checked = true;
   }
 
-  // Mobile filter drawer (reuses the wishlist drawer's visual language via its own toggle)
+  // Mobile filter drawer
   const filterPanel = document.querySelector("[data-filters]");
   const filterToggle = document.querySelector("[data-filter-toggle]");
   const filterClose = document.querySelector("[data-filter-close]");

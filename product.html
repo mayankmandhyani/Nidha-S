@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <script>document.documentElement.classList.add('js-motion')</script>
 <title>Product — Nidha's</title>
-<meta name="description" content="Product details from Nidha's. Save to favourites and enquire on WhatsApp.">
+<meta name="description" content="Product details from Nidha's — unstitched fabric, sold as a complete set of 4 colourways. Save to favourites and enquire on WhatsApp.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="style.css">
 <link rel="stylesheet" href="motion.css">
@@ -14,20 +14,24 @@
 
 <a href="#main" class="skip-link">Skip to content</a>
 
-<div class="announce">Complimentary styling advice on WhatsApp · Handcrafted across India</div>
+<div class="announce" data-i18n="announce.text">Complimentary styling advice on WhatsApp · Handcrafted across India</div>
 
 <header class="site-header">
   <div class="container header-row">
     <nav class="nav-main" aria-label="Primary">
-      <a href="index.html">Home</a>
-      <a href="shop.html">Collections</a>
-      <a href="about.html">About</a>
-      <a href="contact.html">Contact</a>
+      <a href="index.html" data-i18n="nav.home">Home</a>
+      <a href="shop.html" data-i18n="nav.collections">Collections</a>
+      <a href="about.html" data-i18n="nav.about">About</a>
+      <a href="contact.html" data-i18n="nav.contact">Contact</a>
     </nav>
 
     <a href="index.html" class="logo">Nidha<span>'</span>s</a>
 
     <div class="header-actions">
+      <div class="lang-toggle" data-lang-toggle role="group" aria-label="Language">
+        <button type="button" data-lang="en" aria-pressed="true">EN</button>
+        <button type="button" data-lang="hi" aria-pressed="false">हिं</button>
+      </div>
       <button class="icon-btn" aria-label="Search">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
       </button>
@@ -50,13 +54,13 @@
     </button>
   </div>
   <div class="mobile-nav-links">
-    <a href="index.html">Home</a>
-    <a href="shop.html">Collections</a>
-    <a href="about.html">About</a>
-    <a href="contact.html">Contact</a>
+    <a href="index.html" data-i18n="nav.home">Home</a>
+    <a href="shop.html" data-i18n="nav.collections">Collections</a>
+    <a href="about.html" data-i18n="nav.about">About</a>
+    <a href="contact.html" data-i18n="nav.contact">Contact</a>
   </div>
   <div class="mobile-nav-footer">
-    <a class="btn btn-whatsapp btn-block" href="https://wa.me/919999999999" target="_blank" rel="noopener">Chat with us on WhatsApp</a>
+    <a class="btn btn-whatsapp btn-block" href="https://wa.me/919999999999" target="_blank" rel="noopener" data-i18n="mobileNav.whatsapp">Chat with us on WhatsApp</a>
   </div>
 </nav>
 
@@ -65,7 +69,7 @@
   <div class="page-banner" style="padding-bottom:0;border-bottom:none;">
     <div class="container" style="padding-inline:0">
       <div class="breadcrumb">
-        <a href="index.html">Home</a><span class="sep">/</span>
+        <a href="index.html" data-i18n="breadcrumb.home">Home</a><span class="sep">/</span>
         <a href="shop.html" data-crumb-cat>Collections</a><span class="sep">/</span>
         <span data-crumb-name>Product</span>
       </div>
@@ -89,58 +93,54 @@
 
         <div class="pd-option">
           <div class="pd-option-head">
-            <span class="pd-option-label">Colour</span>
+            <span class="pd-option-label" data-i18n="pd.colourLabel">This Design's Colours</span>
           </div>
           <div class="color-row" data-color-row></div>
+          <p class="pd-colour-note" data-i18n="pd.colourNote">All 4 colourways included — sold as a complete set only.</p>
         </div>
 
-        <div class="pd-option">
-          <div class="pd-option-head">
-            <span class="pd-option-label">Size</span>
-            <button class="size-guide-link" data-size-guide-open type="button">Size Guide</button>
-          </div>
-          <div class="size-row" data-size-row></div>
-        </div>
+        <p class="pd-policy-note" data-i18n="pd.policyNote">Sold as a complete set of all 4 colourways shown above — not available as a single piece or single colour.</p>
 
         <div class="pd-actions">
           <button class="btn btn-outline" data-pd-wishlist aria-pressed="false">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 20.5s-8-4.9-8-11A4.7 4.7 0 0 1 12 6a4.7 4.7 0 0 1 8 3.5c0 6.1-8 11-8 11z"/></svg>
-            <span>Add to Favourites</span>
+            <span data-pd-wishlist-label data-i18n="pd.addFavourite">Add to Favourites</span>
           </button>
           <a class="btn btn-whatsapp" data-pd-whatsapp href="#" target="_blank" rel="noopener">
             <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.1-1.7-.8-1.9-.9-.3-.1-.4-.1-.6.1-.2.3-.7.9-.8 1-.1.2-.3.2-.5.1-.3-.1-1.2-.4-2.2-1.4-.8-.7-1.4-1.6-1.5-1.9-.2-.3 0-.4.1-.6l.4-.5c.1-.1.2-.3.2-.4.1-.2 0-.3 0-.4-.1-.1-.6-1.4-.8-1.9-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.2.3-.9.9-.9 2.2s1 2.5 1.1 2.7c.1.2 2 3 4.7 4.3.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.5-.1 1.7-.7 1.9-1.3.2-.7.2-1.2.2-1.3-.1-.1-.2-.2-.5-.3z"/><path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.1l-.3-.2-3.1.8.8-3-.2-.3A8.2 8.2 0 1 1 20.2 12 8.2 8.2 0 0 1 12 20.2z"/></svg>
-            Enquire on WhatsApp
+            <span data-i18n="cta.whatsappEnquire">Enquire on WhatsApp</span>
           </a>
         </div>
 
         <div class="pd-trust">
-          <div class="pd-trust-item"><svg viewBox="0 0 24 24"><path d="M12 2l1.8 5.6H20l-4.6 3.4 1.8 5.6L12 13.2 6.8 16.6l1.8-5.6L4 7.6h6.2z"/></svg>Handcrafted piece</div>
-          <div class="pd-trust-item"><svg viewBox="0 0 24 24"><path d="M3 7h11v9H3z"/><path d="M14 10h4l3 3v3h-7z"/></svg>Pan-India delivery</div>
-          <div class="pd-trust-item"><svg viewBox="0 0 24 24"><path d="M4 4h13l3 5-3 5H4z"/></svg>Easy exchange via WhatsApp</div>
+          <div class="pd-trust-item"><svg viewBox="0 0 24 24"><path d="M12 2l1.8 5.6H20l-4.6 3.4 1.8 5.6L12 13.2 6.8 16.6l1.8-5.6L4 7.6h6.2z"/></svg><span data-i18n="pd.trust1">Hand-finished fabric</span></div>
+          <div class="pd-trust-item"><svg viewBox="0 0 24 24"><path d="M3 7h11v9H3z"/><path d="M14 10h4l3 3v3h-7z"/></svg><span data-i18n="pd.trust2">Pan-India delivery</span></div>
+          <div class="pd-trust-item"><svg viewBox="0 0 24 24"><path d="M4 4h13l3 5-3 5H4z"/></svg><span data-i18n="pd.trust3">Fabric queries on WhatsApp</span></div>
         </div>
 
         <div class="accordion">
           <details class="accordion-item" open>
-            <summary>Description <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M6 12h12"/></svg></summary>
+            <summary><span data-i18n="accordion.description">Description</span> <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M6 12h12"/></svg></summary>
             <div class="accordion-body">
-              <p>Hand-finished with attention to drape and stitching detail. Colours may vary slightly from screen to fabric — our team can send close-up shots on WhatsApp before you confirm.</p>
+              <p data-pd-description-body></p>
             </div>
           </details>
           <details class="accordion-item">
-            <summary>Fabric &amp; Care <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M6 12h12"/></svg></summary>
+            <summary><span data-i18n="accordion.fabricCare">Fabric & Care</span> <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M6 12h12"/></svg></summary>
             <div class="accordion-body">
-              <p>Fabric: <span data-pd-fabric></span></p>
+              <p><span data-i18n="pd.fabricLabel">Fabric:</span> <span data-pd-fabric></span></p>
               <ul>
-                <li>Dry clean recommended for first wash</li>
-                <li>Iron on reverse at medium heat</li>
-                <li>Store folded, away from direct sunlight</li>
+                <li data-i18n="pd.careItem1">Dry clean recommended for first wash</li>
+                <li data-i18n="pd.careItem2">Iron on reverse at medium heat</li>
+                <li data-i18n="pd.careItem3">Store folded, away from direct sunlight</li>
+                <li data-i18n="pd.careItem4">Fabric is cut fresh for your order once confirmed</li>
               </ul>
             </div>
           </details>
           <details class="accordion-item">
-            <summary>Shipping &amp; Returns <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M6 12h12"/></svg></summary>
+            <summary><span data-i18n="accordion.shipping">Shipping & Returns</span> <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M6 12h12"/></svg></summary>
             <div class="accordion-body">
-              <p>We don't run an online checkout — once you confirm on WhatsApp, our team shares final pricing, delivery timelines and exchange terms directly with you before anything ships.</p>
+              <p data-i18n="pd.shippingBody">We don't run an online checkout — once you confirm the design and set on WhatsApp, our team cuts your fabric to order and shares delivery timelines directly with you.</p>
             </div>
           </details>
         </div>
@@ -153,7 +153,7 @@
     <div class="section-head">
       <div>
         <span class="fold" aria-hidden="true"></span>
-        <h2>You May Also Like</h2>
+        <h2 data-i18n="pd.relatedHeading">You May Also Like</h2>
       </div>
     </div>
     <div class="product-grid" data-related-grid></div>
@@ -165,7 +165,7 @@
   <div class="container footer-grid">
     <div class="footer-brand">
       <a href="index.html" class="logo">Nidha<span>'</span>s</a>
-      <p>Handcrafted salwar suits, Chikankari and festive wear, made in small batches across India.</p>
+      <p data-i18n="footer.tagline">Unstitched Chikankari, festive and bridal fabric sets, handcrafted in small batches across India.</p>
       <div class="footer-socials">
         <a href="https://instagram.com" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg></a>
         <a href="https://facebook.com" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M14 9h3V6h-3c-2 0-3.5 1.5-3.5 3.5V11H8v3h2.5v6h3v-6H16l.5-3h-3V9.5c0-.3.2-.5.5-.5z"/></svg></a>
@@ -173,7 +173,7 @@
       </div>
     </div>
     <nav class="footer-col" aria-label="Shop">
-      <h4>Shop</h4>
+      <h4 data-i18n="footer.shop">Shop</h4>
       <ul>
         <li><a href="shop.html?category=Bridal">Bridal</a></li>
         <li><a href="shop.html?category=Chikankari">Chikankari</a></li>
@@ -182,32 +182,32 @@
       </ul>
     </nav>
     <nav class="footer-col" aria-label="Company">
-      <h4>Company</h4>
+      <h4 data-i18n="footer.company">Company</h4>
       <ul>
-        <li><a href="about.html">About Us</a></li>
-        <li><a href="contact.html">Contact</a></li>
-        <li><a href="privacy.html">Privacy Policy</a></li>
-        <li><a href="terms.html">Terms &amp; Conditions</a></li>
+        <li><a href="about.html" data-i18n="footer.linkAbout">About Us</a></li>
+        <li><a href="contact.html" data-i18n="footer.linkContact">Contact</a></li>
+        <li><a href="privacy.html" data-i18n="footer.linkPrivacy">Privacy Policy</a></li>
+        <li><a href="terms.html" data-i18n="footer.linkTerms">Terms &amp; Conditions</a></li>
       </ul>
     </nav>
     <div class="footer-col footer-contact">
-      <h4>Get In Touch</h4>
+      <h4 data-i18n="footer.getInTouch">Get In Touch</h4>
       <p>Surat, Gujarat, India</p>
       <p>hello@nidhas.example</p>
-      <p>Mon–Sat, 10am–7pm IST</p>
-      <a class="btn btn-whatsapp btn-sm" href="https://wa.me/919999999999" target="_blank" rel="noopener">Chat on WhatsApp</a>
+      <p data-i18n="footer.hours">Mon–Sat, 10am–7pm IST</p>
+      <a class="btn btn-whatsapp btn-sm" href="https://wa.me/919999999999" target="_blank" rel="noopener" data-i18n="footer.whatsapp">Chat on WhatsApp</a>
     </div>
   </div>
   <div class="footer-bottom">
-    <span>© 2026 Nidha's. All rights reserved.</span>
-    <span>Orders are confirmed personally over WhatsApp — no online payment required. <a href="privacy.html">Privacy</a> · <a href="terms.html">Terms</a></span>
+    <span data-i18n="footer.copyright">© 2026 Nidha's. All rights reserved.</span>
+    <span><span data-i18n="footer.paymentNote">Orders are confirmed personally over WhatsApp — no online payment required.</span> <a href="privacy.html" data-i18n="footer.linkPrivacy">Privacy Policy</a> · <a href="terms.html" data-i18n="footer.linkTerms">Terms &amp; Conditions</a></span>
   </div>
 </footer>
 
 <div class="drawer-overlay" data-drawer-overlay></div>
 <aside class="drawer" data-drawer aria-label="Favourites">
   <div class="drawer-head">
-    <h2>Your Favourites</h2>
+    <h2 data-i18n="drawer.title">Your Favourites</h2>
     <button class="icon-btn" data-drawer-close aria-label="Close favourites">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 6l12 12M18 6L6 18"/></svg>
     </button>
@@ -216,30 +216,7 @@
   <div class="drawer-foot" data-drawer-foot></div>
 </aside>
 
-<!-- Size guide modal -->
-<div class="modal-overlay" data-size-modal>
-  <div class="modal" role="dialog" aria-modal="true" aria-label="Size guide">
-    <div class="modal-head">
-      <h3>Size Guide</h3>
-      <button class="icon-btn" data-size-modal-close aria-label="Close size guide">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 6l12 12M18 6L6 18"/></svg>
-      </button>
-    </div>
-    <table class="size-table">
-      <thead><tr><th>Size</th><th>Bust (in)</th><th>Waist (in)</th><th>Hip (in)</th></tr></thead>
-      <tbody>
-        <tr><td>XS</td><td>32</td><td>26</td><td>35</td></tr>
-        <tr><td>S</td><td>34</td><td>28</td><td>37</td></tr>
-        <tr><td>M</td><td>36</td><td>30</td><td>39</td></tr>
-        <tr><td>L</td><td>38</td><td>32</td><td>41</td></tr>
-        <tr><td>XL</td><td>40</td><td>34</td><td>43</td></tr>
-        <tr><td>XXL</td><td>42</td><td>36</td><td>45</td></tr>
-      </tbody>
-    </table>
-    <p style="margin-top:14px;font-size:.82rem;color:var(--bark)">Between sizes, or unsure? Send your measurements on WhatsApp and we'll confirm fit before you order.</p>
-  </div>
-</div>
-
+<script src="i18n.js"></script>
 <script src="main.js"></script>
 <script src="product.js"></script>
 <script src="motion.js"></script>

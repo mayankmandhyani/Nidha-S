@@ -162,7 +162,7 @@
     document.addEventListener("mousemove", move, { passive: true });
     document.addEventListener("mouseleave", () => cursor.classList.remove("is-visible"));
 
-    const HOVER_SEL = "a, button, .btn, summary, input, select, textarea, .wishlist-btn, .icon-btn, .size-pill, .color-chip";
+    const HOVER_SEL = "a, button, .btn, summary, input, select, textarea, .wishlist-btn, .icon-btn, .color-chip";
     document.addEventListener("mouseover", (e) => {
       if (e.target.closest(HOVER_SEL)) cursor.classList.add("is-hover");
     });

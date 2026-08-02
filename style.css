@@ -8,12 +8,12 @@
   --sand:#eee3d0;
   --sand-deep:#e3d4b8;
   --white:#ffffff;
-  --ink:#221e19;
-  --ink-soft:#3a342b;
-  --bark:#6e6152;
-  --gold:#a7822e;
-  --gold-soft:#c9a860;
-  --gold-text:#7a5d21; /* darker than --gold: meets 4.5:1 contrast for small text on ivory/sand */
+  --ink:#0f1e3d;          /* navy, sampled from the Nidha's logo wordmark */
+  --ink-soft:#1c2f52;     /* lighter navy, for hover states */
+  --bark:#565e70;         /* muted navy-grey for secondary text */
+  --gold:#c86b2a;         /* rust orange, sampled from the Nidha's logo background */
+  --gold-soft:#e2935c;    /* lighter orange tint, for text on dark navy sections */
+  --gold-text:#8f4b1d;    /* darker orange — meets 4.5:1 for small text on ivory/sand */
   --line:#ded0b4;
   --error:#a13a2f;
 
@@ -571,7 +571,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,
 }
 .size-pill[aria-pressed="true"]{background:var(--ink);color:var(--ivory);border-color:var(--ink);}
 .size-pill:hover:not([aria-pressed="true"]){border-color:var(--ink);}
-.color-row .color-chip{width:32px;height:32px;}
+.color-row .color-chip{width:32px;height:32px;cursor:default;}
 
 .pd-actions{display:flex;gap:12px;margin-top:36px;flex-wrap:wrap;}
 .pd-actions .btn{flex:1;min-width:190px;}
@@ -680,3 +680,30 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,
   .drawer-item{grid-template-columns:60px 1fr;}
   .drawer-item .price-wrap{grid-column:2;}
 }
+
+/* ============================================================
+   Added for the raw-cloth / set-of-4 business model + bilingual UI
+   ============================================================ */
+.set-note{font-size:.72rem;color:var(--bark);margin-top:6px;letter-spacing:.02em;}
+
+.policy-banner{
+  background:var(--sand);border-top:1px solid var(--line);border-bottom:1px solid var(--line);
+  padding:22px var(--gutter);
+}
+.policy-banner .container{display:flex;gap:16px;align-items:flex-start;padding-inline:0;}
+.policy-banner .ico{width:22px;height:22px;stroke:var(--gold-text);fill:none;stroke-width:1.6;flex-shrink:0;margin-top:2px;}
+.policy-banner h2{font-size:.95rem;font-family:var(--font-body);font-weight:700;margin-bottom:4px;}
+.policy-banner p{font-size:.88rem;color:var(--bark);max-width:70ch;}
+
+.lang-toggle{display:flex;border:1px solid var(--line);border-radius:20px;overflow:hidden;margin-right:6px;flex-shrink:0;}
+.lang-toggle button{
+  padding:6px 12px;font-size:.68rem;font-weight:700;letter-spacing:.04em;
+  color:var(--bark);transition:background var(--dur) var(--ease),color var(--dur) var(--ease);
+}
+.lang-toggle button[aria-pressed="true"]{background:var(--ink);color:var(--ivory);}
+
+.pd-policy-note{
+  margin-top:22px;padding:14px 16px;background:var(--sand);border-left:2px solid var(--gold);
+  font-size:.85rem;color:var(--ink-soft);border-radius:var(--radius);
+}
+.pd-colour-note{font-size:.82rem;color:var(--bark);margin-top:4px;}

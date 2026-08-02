@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <script>document.documentElement.classList.add('js-motion')</script>
 <title>Nidha's — Handcrafted Indian Ethnic Wear</title>
-<meta name="description" content="Nidha's — premium salwar suits, Chikankari, festive and bridal wear, handcrafted in India. Browse the edit, save your favourites, and enquire on WhatsApp.">
+<meta name="description" content="Nidha's — unstitched Chikankari, festive and bridal fabric, sold as complete 4-colour design sets, handcrafted in India. Browse the edit, save your favourites, and enquire on WhatsApp.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="style.css">
 <link rel="stylesheet" href="motion.css">
@@ -14,20 +14,24 @@
 
 <a href="#main" class="skip-link">Skip to content</a>
 
-<div class="announce">Complimentary styling advice on WhatsApp · Handcrafted across India</div>
+<div class="announce" data-i18n="announce.text">Complimentary styling advice on WhatsApp · Handcrafted across India</div>
 
 <header class="site-header">
   <div class="container header-row">
     <nav class="nav-main" aria-label="Primary">
-      <a href="index.html" aria-current="page">Home</a>
-      <a href="shop.html">Collections</a>
-      <a href="about.html">About</a>
-      <a href="contact.html">Contact</a>
+      <a href="index.html" aria-current="page" data-i18n="nav.home">Home</a>
+      <a href="shop.html" data-i18n="nav.collections">Collections</a>
+      <a href="about.html" data-i18n="nav.about">About</a>
+      <a href="contact.html" data-i18n="nav.contact">Contact</a>
     </nav>
 
     <a href="index.html" class="logo">Nidha<span>'</span>s</a>
 
     <div class="header-actions">
+      <div class="lang-toggle" data-lang-toggle role="group" aria-label="Language">
+        <button type="button" data-lang="en" aria-pressed="true">EN</button>
+        <button type="button" data-lang="hi" aria-pressed="false">हिं</button>
+      </div>
       <button class="icon-btn" aria-label="Search">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
       </button>
@@ -42,7 +46,6 @@
   </div>
 </header>
 
-<!-- Mobile nav -->
 <nav class="mobile-nav" data-mobile-nav aria-label="Mobile">
   <div class="mobile-nav-top">
     <a href="index.html" class="logo">Nidha<span>'</span>s</a>
@@ -51,13 +54,13 @@
     </button>
   </div>
   <div class="mobile-nav-links">
-    <a href="index.html">Home</a>
-    <a href="shop.html">Collections</a>
-    <a href="about.html">About</a>
-    <a href="contact.html">Contact</a>
+    <a href="index.html" data-i18n="nav.home">Home</a>
+    <a href="shop.html" data-i18n="nav.collections">Collections</a>
+    <a href="about.html" data-i18n="nav.about">About</a>
+    <a href="contact.html" data-i18n="nav.contact">Contact</a>
   </div>
   <div class="mobile-nav-footer">
-    <a class="btn btn-whatsapp btn-block" href="https://wa.me/919999999999" target="_blank" rel="noopener">Chat with us on WhatsApp</a>
+    <a class="btn btn-whatsapp btn-block" href="https://wa.me/919999999999" target="_blank" rel="noopener" data-i18n="mobileNav.whatsapp">Chat with us on WhatsApp</a>
   </div>
 </nav>
 
@@ -68,18 +71,18 @@
     <div class="hero-spine">Handwoven · Hand-embroidered · Made in India</div>
     <div class="hero-body">
       <div class="hero-copy">
-        <span class="eyebrow">The New Edit — 2026</span>
-        <h1>Where tradition<br>meets tomorrow.</h1>
+        <span class="eyebrow" data-i18n="hero.eyebrow">The New Edit — 2026</span>
+        <h1 data-i18n-html="hero.headline">Where tradition<br>meets tomorrow.</h1>
         <span class="hero-fold" aria-hidden="true"></span>
-        <p>Salwar suits, Chikankari and festive sets cut for the way you actually move, worn by women who don't separate heritage from modern life. Every piece is finished by hand before it reaches you.</p>
+        <p data-i18n="hero.subtitle">Chikankari, festive and bridal fabric, hand-finished and sold as complete 4-colour design sets — ready for your tailor to stitch into the piece you have in mind.</p>
         <div class="hero-actions">
-          <a href="shop.html" class="btn btn-primary">Explore The Collection</a>
-          <a href="https://wa.me/919999999999" target="_blank" rel="noopener" class="btn btn-outline">Chat on WhatsApp</a>
+          <a href="shop.html" class="btn btn-primary" data-i18n="hero.ctaPrimary">Explore The Collection</a>
+          <a href="https://wa.me/919999999999" target="_blank" rel="noopener" class="btn btn-outline" data-i18n="hero.ctaWhatsapp">Chat on WhatsApp</a>
         </div>
       </div>
       <div class="hero-visual">
         <div class="video-frame hero-video" data-video="hero.mp4">
-          <div class="placeholder-media tall" style="--ph-h:28" data-mono="N"><span class="placeholder-tag">Sample image — hero</span></div>
+          <div class="placeholder-media tall" style="--ph-h:28" data-mono="N"><span class="placeholder-tag" data-i18n="media.sampleImage">Sample image</span></div>
           <div class="video-placeholder-badge">
             <span class="play-ico"><svg viewBox="0 0 24 24"><path d="M8 5l12 7-12 7z"/></svg></span>
             <span>Video Coming Soon</span>
@@ -89,40 +92,51 @@
     </div>
   </section>
 
+  <!-- POLICY BANNER: unstitched fabric, set-of-4-only -->
+  <section class="policy-banner">
+    <div class="container">
+      <svg class="ico" viewBox="0 0 24 24"><path d="M12 2l9 4.5v9L12 20l-9-4.5v-9z"/><path d="M12 8v5"/><circle cx="12" cy="16" r=".6" fill="currentColor" stroke="none"/></svg>
+      <div>
+        <h2 data-i18n="policy.title">Please note before you order</h2>
+        <p data-i18n="policy.body">We sell unstitched fabric only — not ready-made kurtis. Every design is sold as a complete set of all 4 colourways together; we don't split sets or sell single colours.</p>
+      </div>
+    </div>
+  </section>
+
   <!-- FEATURED COLLECTIONS -->
   <section class="section container">
     <div class="section-head">
       <div>
         <span class="fold" aria-hidden="true"></span>
-        <h2>Featured Collections</h2>
-        <p>Three edits, one standard of finishing — start wherever the occasion calls you.</p>
+        <h2 data-i18n="collections.heading">Featured Collections</h2>
+        <p data-i18n="collections.subtitle">Three edits, one standard of finishing — start wherever the occasion calls you.</p>
       </div>
-      <a href="shop.html" class="section-link">View All Collections</a>
+      <a href="shop.html" class="section-link" data-i18n="collections.viewAll">View All Collections</a>
     </div>
     <div class="collections-grid">
       <a href="shop.html?category=Bridal" class="collection-card reveal">
         <div class="video-frame" data-video="bridal.mp4">
-          <div class="placeholder-media tall" style="--ph-h:225" data-mono="N"><span class="placeholder-tag">Sample image</span></div>
+          <div class="placeholder-media tall" style="--ph-h:225" data-mono="N"><span class="placeholder-tag" data-i18n="media.sampleImage">Sample image</span></div>
           <div class="video-placeholder-badge">
             <span class="play-ico"><svg viewBox="0 0 24 24"><path d="M8 5l12 7-12 7z"/></svg></span>
             <span>Video Coming Soon</span>
           </div>
         </div>
-        <div class="collection-card-overlay"><h3>The Bridal Edit</h3><span>Shop Bridal</span></div>
+        <div class="collection-card-overlay"><h3 data-i18n="collections.bridalTitle">The Bridal Edit</h3><span data-i18n="collections.bridalCta">Shop Bridal</span></div>
       </a>
       <a href="shop.html?category=Chikankari" class="collection-card reveal">
         <div class="video-frame" data-video="collection.mp4">
-          <div class="placeholder-media tall" style="--ph-h:60" data-mono="N"><span class="placeholder-tag">Sample image</span></div>
+          <div class="placeholder-media tall" style="--ph-h:60" data-mono="N"><span class="placeholder-tag" data-i18n="media.sampleImage">Sample image</span></div>
           <div class="video-placeholder-badge">
             <span class="play-ico"><svg viewBox="0 0 24 24"><path d="M8 5l12 7-12 7z"/></svg></span>
             <span>Video Coming Soon</span>
           </div>
         </div>
-        <div class="collection-card-overlay"><h3>Chikankari Story</h3><span>Shop Chikankari</span></div>
+        <div class="collection-card-overlay"><h3 data-i18n="collections.chikankariTitle">Chikankari Story</h3><span data-i18n="collections.chikankariCta">Shop Chikankari</span></div>
       </a>
       <a href="shop.html?category=Festive%20Wear" class="collection-card reveal">
-        <div class="placeholder-media tall" style="--ph-h:12" data-mono="N"><span class="placeholder-tag">Sample image</span></div>
-        <div class="collection-card-overlay"><h3>Festive Wear</h3><span>Shop Festive</span></div>
+        <div class="placeholder-media tall" style="--ph-h:12" data-mono="N"><span class="placeholder-tag" data-i18n="media.sampleImage">Sample image</span></div>
+        <div class="collection-card-overlay"><h3 data-i18n="collections.festiveTitle">Festive Wear</h3><span data-i18n="collections.festiveCta">Shop Festive</span></div>
       </a>
     </div>
   </section>
@@ -133,10 +147,10 @@
       <div class="section-head">
         <div>
           <span class="fold" aria-hidden="true"></span>
-          <h2>New Arrivals</h2>
-          <p>Fresh off the atelier floor this month.</p>
+          <h2 data-i18n="arrivals.heading">New Arrivals</h2>
+          <p data-i18n="arrivals.subtitle">Fresh off the design table this month.</p>
         </div>
-        <a href="shop.html" class="section-link">Shop All New</a>
+        <a href="shop.html" class="section-link" data-i18n="arrivals.cta">Shop All New</a>
       </div>
       <div class="product-grid" data-arrivals-grid></div>
     </div>
@@ -148,10 +162,10 @@
       <div class="section-head">
         <div>
           <span class="fold" aria-hidden="true"></span>
-          <h2>Best Sellers</h2>
-          <p>The pieces our customers keep coming back for.</p>
+          <h2 data-i18n="bestsellers.heading">Best Sellers</h2>
+          <p data-i18n="bestsellers.subtitle">The designs our customers keep coming back for.</p>
         </div>
-        <a href="shop.html" class="section-link">Shop Bestsellers</a>
+        <a href="shop.html" class="section-link" data-i18n="bestsellers.cta">Shop Bestsellers</a>
       </div>
       <div class="product-grid" data-best-grid></div>
     </div>
@@ -162,7 +176,7 @@
     <div class="container story">
       <div class="story-visual reveal">
         <div class="video-frame" data-video="craftsmanship.mp4">
-          <div class="placeholder-media wide" style="--ph-h:36" data-mono="N"><span class="placeholder-tag">Sample image — atelier</span></div>
+          <div class="placeholder-media wide" style="--ph-h:36" data-mono="N"><span class="placeholder-tag" data-i18n="media.sampleImage">Sample image</span></div>
           <div class="video-placeholder-badge">
             <span class="play-ico"><svg viewBox="0 0 24 24"><path d="M8 5l12 7-12 7z"/></svg></span>
             <span>Video Coming Soon</span>
@@ -170,12 +184,12 @@
         </div>
       </div>
       <div class="story-copy reveal">
-        <span class="eyebrow">Our Story</span>
-        <blockquote>"We didn't want a brand that photographs well and wears badly. So we built the other kind."</blockquote>
-        <p>Nidha's began as a small tailoring table and a stubborn belief: that Indian ethnic wear could be both properly made and properly wearable. Every fabric is chosen before the design is, every Chikankari panel is checked by hand, and every set is cut in small batches rather than mass runs — so what you see is what actually arrives.</p>
+        <span class="eyebrow" data-i18n="story.eyebrow">Our Story</span>
+        <blockquote data-i18n="story.quote">"We didn't want a brand that photographs well and wears badly. So we built the other kind."</blockquote>
+        <p data-i18n="story.body">Nidha's began at a small cutting table and a stubborn belief: that Indian ethnic fabric could be chosen as carefully as the garment it becomes. Every design is checked by hand, cut in small batches rather than mass runs, and sold complete — as the full set it was designed in, not split apart.</p>
         <div class="story-signature">
           <strong>Nidha</strong>
-          Founder &amp; Head of Design
+          <span data-i18n="story.founderTitle">Founder &amp; Head of Design</span>
         </div>
       </div>
     </div>
@@ -187,29 +201,29 @@
       <div class="section-head center" style="justify-content:center;text-align:center;">
         <div style="margin-inline:auto;">
           <span class="fold mx-auto" aria-hidden="true"></span>
-          <h2>Why Choose Nidha's</h2>
+          <h2 data-i18n="why.heading">Why Choose Nidha's</h2>
         </div>
       </div>
       <div class="feature-grid">
         <div class="feature-item reveal">
           <svg class="ico" viewBox="0 0 24 24"><path d="M12 2l1.8 5.6H20l-4.6 3.4 1.8 5.6L12 13.2 6.8 16.6l1.8-5.6L4 7.6h6.2z"/></svg>
-          <h3>Handcrafted Detailing</h3>
-          <p>Hand embroidery and finishing checked piece by piece, not batch-sampled.</p>
+          <h3 data-i18n="why.item1Title">Handcrafted Detailing</h3>
+          <p data-i18n="why.item1Body">Hand embroidery and finishing checked piece by piece, not batch-sampled.</p>
         </div>
         <div class="feature-item reveal">
           <svg class="ico" viewBox="0 0 24 24"><path d="M4 21c4-1 6-4 6-8V5l6 2v6c0 4 2 7 6 8"/><path d="M10 8h4"/></svg>
-          <h3>Premium Fabrics</h3>
-          <p>Pure cotton, Chanderi, Georgette and silk blends sourced for how they wear, not just how they photograph.</p>
+          <h3 data-i18n="why.item2Title">Premium Fabrics</h3>
+          <p data-i18n="why.item2Body">Pure cotton, Chanderi, Georgette and silk blends, sourced for how they wear, not just how they photograph.</p>
         </div>
         <div class="feature-item reveal">
           <svg class="ico" viewBox="0 0 24 24"><path d="M4 4h13l3 5-3 5H4z"/><path d="M9 9h6"/></svg>
-          <h3>Personal Styling on WhatsApp</h3>
-          <p>Sizing, fabric questions, alterations — a real person replies, not a chatbot script.</p>
+          <h3 data-i18n="why.item3Title">Personal Guidance on WhatsApp</h3>
+          <p data-i18n="why.item3Body">Fabric questions, stitching guidance and set details — a real person replies, not a chatbot script.</p>
         </div>
         <div class="feature-item reveal">
           <svg class="ico" viewBox="0 0 24 24"><path d="M3 7h11v9H3z"/><path d="M14 10h4l3 3v3h-7z"/><circle cx="7" cy="18" r="1.6"/><circle cx="17.5" cy="18" r="1.6"/></svg>
-          <h3>Pan-India Delivery</h3>
-          <p>Once your order is confirmed on WhatsApp, it's packed and shipped to your door.</p>
+          <h3 data-i18n="why.item4Title">Pan-India Delivery</h3>
+          <p data-i18n="why.item4Body">Once your order is confirmed on WhatsApp, your fabric is cut, packed and shipped to your door.</p>
         </div>
       </div>
     </div>
@@ -221,23 +235,23 @@
       <div class="section-head center" style="justify-content:center;text-align:center;">
         <div style="margin-inline:auto;">
           <span class="fold mx-auto" aria-hidden="true"></span>
-          <h2>What Customers Say</h2>
+          <h2 data-i18n="testimonials.heading">What Customers Say</h2>
         </div>
       </div>
       <div class="testi-wrap" data-testi>
         <div class="testi-slide is-active">
           <div class="testi-stars">★★★★★</div>
-          <p>"The Chikankari set fit exactly as described and the fabric felt genuinely premium — nothing like what I expected online. Ordering over WhatsApp with a real person made it easy."</p>
+          <p data-i18n="testi1.quote">"The Chikankari fabric was even richer than the photos, and the full set of 4 colours meant I could pick exactly which one to stitch first. Ordering over WhatsApp with a real person made it easy."</p>
           <p class="testi-name">Ananya R. — Mumbai</p>
         </div>
         <div class="testi-slide">
           <div class="testi-stars">★★★★★</div>
-          <p>"Bought my sister's bridal lehenga from Nidha's. The team walked us through fabric and sizing over calls before we committed to anything. Worth every rupee."</p>
+          <p data-i18n="testi2.quote">"Bought my sister's bridal fabric set from Nidha's. The team walked us through the fabric and colours over calls before we committed to anything. Worth every rupee."</p>
           <p class="testi-name">Kavya S. — Bengaluru</p>
         </div>
         <div class="testi-slide">
           <div class="testi-stars">★★★★★</div>
-          <p>"I've reordered three times now. The finishing on the kurta sets is a level above what I've bought at this price elsewhere."</p>
+          <p data-i18n="testi3.quote">"I've reordered three times now. The finishing on the fabric is a level above what I've bought at this price elsewhere."</p>
           <p class="testi-name">Meera T. — Delhi</p>
         </div>
         <div class="testi-nav">
@@ -255,18 +269,18 @@
       <div class="section-head">
         <div>
           <span class="fold" aria-hidden="true"></span>
-          <h2>Follow @nidhas.official</h2>
-          <p>Styling notes, fabric close-ups, and new drops first.</p>
+          <h2 data-i18n="instagram.heading">Follow @nidhas.official</h2>
+          <p data-i18n="instagram.subtitle">Styling notes, fabric close-ups, and new drops first.</p>
         </div>
-        <a href="https://instagram.com" target="_blank" rel="noopener" class="section-link">Follow on Instagram</a>
+        <a href="https://instagram.com" target="_blank" rel="noopener" class="section-link" data-i18n="instagram.cta">Follow on Instagram</a>
       </div>
       <div class="insta-grid">
-        <a href="https://instagram.com" target="_blank" rel="noopener" class="insta-item"><div class="placeholder-media" style="--ph-h:20" data-mono="N"></div><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg></a>
-        <a href="https://instagram.com" target="_blank" rel="noopener" class="insta-item"><div class="placeholder-media" style="--ph-h:340" data-mono="N"></div><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg></a>
-        <a href="https://instagram.com" target="_blank" rel="noopener" class="insta-item"><div class="placeholder-media" style="--ph-h:95" data-mono="N"></div><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg></a>
-        <a href="https://instagram.com" target="_blank" rel="noopener" class="insta-item"><div class="placeholder-media" style="--ph-h:45" data-mono="N"></div><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg></a>
-        <a href="https://instagram.com" target="_blank" rel="noopener" class="insta-item"><div class="placeholder-media" style="--ph-h:200" data-mono="N"></div><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg></a>
-        <a href="https://instagram.com" target="_blank" rel="noopener" class="insta-item"><div class="placeholder-media" style="--ph-h:12" data-mono="N"></div><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg></a>
+        <a href="https://instagram.com" target="_blank" rel="noopener" class="insta-item reveal"><div class="placeholder-media" style="--ph-h:20" data-mono="N"></div><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg></a>
+        <a href="https://instagram.com" target="_blank" rel="noopener" class="insta-item reveal"><div class="placeholder-media" style="--ph-h:340" data-mono="N"></div><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg></a>
+        <a href="https://instagram.com" target="_blank" rel="noopener" class="insta-item reveal"><div class="placeholder-media" style="--ph-h:95" data-mono="N"></div><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg></a>
+        <a href="https://instagram.com" target="_blank" rel="noopener" class="insta-item reveal"><div class="placeholder-media" style="--ph-h:45" data-mono="N"></div><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg></a>
+        <a href="https://instagram.com" target="_blank" rel="noopener" class="insta-item reveal"><div class="placeholder-media" style="--ph-h:200" data-mono="N"></div><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg></a>
+        <a href="https://instagram.com" target="_blank" rel="noopener" class="insta-item reveal"><div class="placeholder-media" style="--ph-h:12" data-mono="N"></div><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg></a>
       </div>
     </div>
   </section>
@@ -274,13 +288,13 @@
   <!-- NEWSLETTER -->
   <section class="section section--tight newsletter">
     <div class="container">
-      <span class="eyebrow" style="color:var(--gold-soft)">Stay Close</span>
-      <h2>Join the Nidha's Circle</h2>
-      <p>New arrivals, restocks and styling notes — no spam, just the good pieces first.</p>
+      <span class="eyebrow" style="color:var(--gold-soft)" data-i18n="newsletter.eyebrow">Stay Close</span>
+      <h2 data-i18n="newsletter.heading">Join the Nidha's Circle</h2>
+      <p data-i18n="newsletter.subtitle">New arrivals, restocks and styling notes — no spam, just the good pieces first.</p>
       <form class="newsletter-form" data-newsletter>
         <label for="newsletter-email" class="sr-only">Email address</label>
         <input id="newsletter-email" type="email" placeholder="you@email.com" required>
-        <button type="submit">Subscribe</button>
+        <button type="submit" data-i18n="newsletter.button">Subscribe</button>
       </form>
       <p class="form-msg" data-form-msg></p>
     </div>
@@ -292,7 +306,7 @@
   <div class="container footer-grid">
     <div class="footer-brand">
       <a href="index.html" class="logo">Nidha<span>'</span>s</a>
-      <p>Handcrafted salwar suits, Chikankari and festive wear, made in small batches across India.</p>
+      <p data-i18n="footer.tagline">Unstitched Chikankari, festive and bridal fabric sets, handcrafted in small batches across India.</p>
       <div class="footer-socials">
         <a href="https://instagram.com" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg></a>
         <a href="https://facebook.com" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M14 9h3V6h-3c-2 0-3.5 1.5-3.5 3.5V11H8v3h2.5v6h3v-6H16l.5-3h-3V9.5c0-.3.2-.5.5-.5z"/></svg></a>
@@ -300,7 +314,7 @@
       </div>
     </div>
     <nav class="footer-col" aria-label="Shop">
-      <h4>Shop</h4>
+      <h4 data-i18n="footer.shop">Shop</h4>
       <ul>
         <li><a href="shop.html?category=Bridal">Bridal</a></li>
         <li><a href="shop.html?category=Chikankari">Chikankari</a></li>
@@ -309,25 +323,25 @@
       </ul>
     </nav>
     <nav class="footer-col" aria-label="Company">
-      <h4>Company</h4>
+      <h4 data-i18n="footer.company">Company</h4>
       <ul>
-        <li><a href="about.html">About Us</a></li>
-        <li><a href="contact.html">Contact</a></li>
-        <li><a href="privacy.html">Privacy Policy</a></li>
-        <li><a href="terms.html">Terms &amp; Conditions</a></li>
+        <li><a href="about.html" data-i18n="footer.linkAbout">About Us</a></li>
+        <li><a href="contact.html" data-i18n="footer.linkContact">Contact</a></li>
+        <li><a href="privacy.html" data-i18n="footer.linkPrivacy">Privacy Policy</a></li>
+        <li><a href="terms.html" data-i18n="footer.linkTerms">Terms &amp; Conditions</a></li>
       </ul>
     </nav>
     <div class="footer-col footer-contact">
-      <h4>Get In Touch</h4>
+      <h4 data-i18n="footer.getInTouch">Get In Touch</h4>
       <p>Surat, Gujarat, India</p>
       <p>hello@nidhas.example</p>
-      <p>Mon–Sat, 10am–7pm IST</p>
-      <a class="btn btn-whatsapp btn-sm" href="https://wa.me/919999999999" target="_blank" rel="noopener">Chat on WhatsApp</a>
+      <p data-i18n="footer.hours">Mon–Sat, 10am–7pm IST</p>
+      <a class="btn btn-whatsapp btn-sm" href="https://wa.me/919999999999" target="_blank" rel="noopener" data-i18n="footer.whatsapp">Chat on WhatsApp</a>
     </div>
   </div>
   <div class="footer-bottom">
-    <span>© 2026 Nidha's. All rights reserved.</span>
-    <span>Orders are confirmed personally over WhatsApp — no online payment required. <a href="privacy.html">Privacy</a> · <a href="terms.html">Terms</a></span>
+    <span data-i18n="footer.copyright">© 2026 Nidha's. All rights reserved.</span>
+    <span><span data-i18n="footer.paymentNote">Orders are confirmed personally over WhatsApp — no online payment required.</span> <a href="privacy.html" data-i18n="footer.linkPrivacy">Privacy Policy</a> · <a href="terms.html" data-i18n="footer.linkTerms">Terms &amp; Conditions</a></span>
   </div>
 </footer>
 
@@ -335,7 +349,7 @@
 <div class="drawer-overlay" data-drawer-overlay></div>
 <aside class="drawer" data-drawer aria-label="Favourites">
   <div class="drawer-head">
-    <h2>Your Favourites</h2>
+    <h2 data-i18n="drawer.title">Your Favourites</h2>
     <button class="icon-btn" data-drawer-close aria-label="Close favourites">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 6l12 12M18 6L6 18"/></svg>
     </button>
@@ -344,6 +358,7 @@
   <div class="drawer-foot" data-drawer-foot></div>
 </aside>
 
+<script src="i18n.js"></script>
 <script src="main.js"></script>
 <script src="home.js"></script>
 <script src="motion.js"></script>
